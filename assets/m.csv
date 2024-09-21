@@ -1,0 +1,399 @@
+Sr No,Book,Book Index,Chapter,Verse,Occasion
+1,Genesis,1,28,15,Creation
+2,Exodus,2,14,14,Deliverance
+3,Leviticus,3,26,12,Divine Provision
+4,Numbers,4,23,19,Guidance
+5,Deuteronomy,5,31,6,Reassurance
+6,Joshua,6,1,9,Conquest
+7,Judges,7,6,16,Victory
+8,Ruth,8,1,16,Redemption
+9,1 Samuel,9,7,12,Hope
+10,2 Samuel,10,22,20,Protection
+11,1 Kings,11,17,14,Restoration
+12,2 Kings,12,20,19,Restoration
+13,1 Chronicles,13,28,9,Guidance
+14,2 Chronicles,14,20,17,Security
+15,Ezra,15,1,7,Assistance
+16,Nehemiah,16,1,10,Encouragement
+17,Esther,17,4,14,Deliverance
+18,Job,18,23,12,Comfort
+19,Psalms,19,19,14,Security
+20,Proverbs,20,3,5,Trust
+21,Ecclesiastes,21,3,14,Contentment
+22,Song of Solomon,22,4,7,Love
+23,Isaiah,23,41,10,Encouragement
+24,Jeremiah,24,29,11,Hope
+25,Lamentations,25,3,22,Restoration
+26,Ezekiel,26,34,16,Provision
+27,Daniel,27,9,14,Deliverance
+28,Hosea,28,14,4,Love
+29,Joel,29,2,13,Restoration
+30,Amos,30,5,14,Justice
+31,Obadiah,31,1,17,Victory
+32,Jonah,32,2,2,Restoration
+33,Micah,33,7,7,Deliverance
+34,Nahum,34,1,7,Judgment
+35,Habakkuk,35,3,19,Faith
+36,Zephaniah,36,3,17,Restoration
+37,Haggai,37,2,5,Encouragement
+38,Zechariah,38,8,12,Hope
+39,Malachi,39,3,10,Provision
+40,Matthew,40,7,7,Answer to Prayer
+41,Mark,41,11,24,Faith
+42,Luke,42,12,32,Encouragement
+43,John,43,14,27,Peace
+44,Acts,44,16,31,Salvation
+45,Romans,45,8,28,Assurance
+46,1 Corinthians,46,10,13,Strength
+47,2 Corinthians,47,1,20,Promises
+48,Galatians,48,6,9,Perseverance
+49,Ephesians,49,3,20,Abundance
+50,Philippians,50,4,6,Peace
+51,Colossians,51,3,2,Focus
+52,1 Thessalonians,52,5,23,Sanctification
+53,2 Thessalonians,53,3,3,Protection
+54,1 Timothy,54,1,15,Trust
+55,2 Timothy,55,1,7,Fearlessness
+56,Titus,56,3,7,Inheritance
+57,Philemon,57,1,6,Encouragement
+58,Hebrews,58,13,5,Contentment
+59,James,59,1,12,Perseverance
+60,1 Peter,60,5,7,Care
+61,2 Peter,61,1,4,Divine Nature
+62,1 John,62,1,9,Forgiveness
+63,2 John,63,1,2,Truth
+64,3 John,64,1,2,Prosperity
+65,Jude,65,1,24,Preservation
+66,Revelation,66,21,4,Restoration
+67,Genesis,1,22,18,Promise to Abraham
+68,Exodus,2,15,25,Healing
+69,Leviticus,3,26,9,Prosperity
+70,Numbers,4,23,20,Guidance
+71,Deuteronomy,5,30,19,Hope
+72,Joshua,6,23,24,Victory
+73,Judges,7,13,18,Encouragement
+74,Ruth,8,4,9,Commitment
+75,1 Samuel,9,25,2,Hope
+76,2 Samuel,10,20,4,Victory
+77,1 Kings,11,22,1,Restoration
+78,2 Kings,12,20,19,Healing
+79,1 Chronicles,13,7,14,Protection
+80,2 Chronicles,14,20,16,Peace
+81,Ezra,15,6,9,Restoration
+82,Nehemiah,16,2,20,Encouragement
+83,Esther,17,2,20,Protection
+84,Job,18,1,3,Comfort
+85,Psalms,19,19,1,Guidance
+86,Proverbs,20,4,7,Assurance
+87,Ecclesiastes,21,1,14,Contentment
+88,Song of Solomon,22,8,5,Love
+89,Isaiah,23,43,1,Deliverance
+90,Jeremiah,24,32,17,Restoration
+91,Lamentations,25,5,19,Comfort
+92,Ezekiel,26,37,26,Restoration
+93,Daniel,27,10,1,Protection
+94,Hosea,28,2,18,Healing
+95,Joel,29,3,21,Restoration
+96,Amos,30,9,11,Justice
+97,Obadiah,31,1,15,Victory
+98,Jonah,32,3,9,Deliverance
+99,Micah,33,4,10,Restoration
+100,Nahum,34,2,13,Victory
+101,Habakkuk,35,2,20,Faith
+102,Zephaniah,36,3,17,Restoration
+103,Haggai,37,1,13,Encouragement
+104,Zechariah,38,1,16,Hope
+105,Malachi,39,4,2,Provision
+106,Matthew,40,6,33,Provision
+107,Mark,41,10,27,Faith
+108,Luke,42,6,38,Generosity
+109,John,43,8,32,Freedom
+110,Acts,44,2,21,Salvation
+111,Romans,45,10,13,Salvation
+112,1 Corinthians,46,15,57,Victory
+113,2 Corinthians,47,4,16,Renewal
+114,Galatians,48,5,22,Fruitfulness
+115,Ephesians,49,2,10,Creation
+116,Philippians,50,1,6,Assurance
+117,Colossians,51,1,13,Deliverance
+118,1 Thessalonians,52,5,24,Faithfulness
+119,2 Thessalonians,53,2,16,Encouragement
+120,1 Timothy,54,6,15,Trust
+121,2 Timothy,55,4,18,Deliverance
+122,Titus,56,2,14,Hope
+123,Philemon,57,1,21,Encouragement
+124,Hebrews,58,10,23,Faithfulness
+125,James,59,4,7,Resisting Temptation
+126,1 Peter,60,1,5,Protection
+127,2 Peter,61,3,13,Hope
+128,1 John,62,2,25,Promise
+129,2 John,63,1,3,Truth
+130,3 John,64,1,4,Prosperity
+131,Jude,65,1,24,Preservation
+132,Revelation,66,12,10,Victory
+133,Genesis,1,28,15,Promise
+134,Exodus,2,14,14,Freedom
+135,Leviticus,3,26,12,Abundance
+136,Numbers,4,23,19,Guidance
+137,Deuteronomy,5,31,6,Promise
+138,Joshua,6,1,9,Victory
+139,Judges,7,6,16,Encouragement
+140,Ruth,8,1,16,Redemption
+141,1 Samuel,9,7,12,Hope
+142,2 Samuel,10,22,20,Protection
+143,1 Kings,11,17,14,Restoration
+144,2 Kings,12,20,19,Healing
+145,1 Chronicles,13,28,9,Guidance
+146,2 Chronicles,14,20,17,Security
+147,Ezra,15,1,7,Restoration
+148,Nehemiah,16,1,10,Encouragement
+149,Esther,17,4,14,Protection
+150,Job,18,23,12,Comfort
+151,Psalms,19,19,14,Security
+152,Proverbs,20,3,5,Trust
+153,Ecclesiastes,21,3,14,Contentment
+154,Song of Solomon,22,4,7,Love
+155,Isaiah,23,41,10,Encouragement
+156,Jeremiah,24,29,11,Hope
+157,Lamentations,25,3,22,Restoration
+158,Ezekiel,26,34,16,Provision
+159,Daniel,27,9,14,Deliverance
+160,Hosea,28,14,4,Love
+161,Joel,29,2,13,Restoration
+162,Amos,30,5,14,Justice
+163,Obadiah,31,1,17,Victory
+164,Jonah,32,2,2,Restoration
+165,Micah,33,7,7,Deliverance
+166,Nahum,34,1,7,Judgment
+167,Habakkuk,35,3,19,Faith
+168,Zephaniah,36,3,17,Restoration
+169,Haggai,37,2,5,Encouragement
+170,Zechariah,38,8,12,Hope
+171,Malachi,39,3,10,Provision
+172,Matthew,40,7,7,Answer to Prayer
+173,Mark,41,11,24,Faith
+174,Luke,42,12,32,Encouragement
+175,John,43,14,27,Peace
+176,Acts,44,16,31,Salvation
+177,Romans,45,8,28,Assurance
+178,1 Corinthians,46,10,13,Strength
+179,2 Corinthians,47,1,20,Promises
+180,Galatians,48,6,9,Perseverance
+181,Ephesians,49,3,20,Abundance
+182,Philippians,50,4,6,Peace
+183,Colossians,51,3,2,Focus
+184,1 Thessalonians,52,5,23,Sanctification
+185,2 Thessalonians,53,3,3,Protection
+186,1 Timothy,54,1,15,Trust
+187,2 Timothy,55,1,7,Fearlessness
+188,Titus,56,3,7,Inheritance
+189,Philemon,57,1,6,Encouragement
+190,Hebrews,58,13,5,Contentment
+191,James,59,1,12,Perseverance
+192,1 Peter,60,5,7,Care
+193,2 Peter,61,1,4,Divine Nature
+194,1 John,62,1,9,Forgiveness
+195,2 John,63,1,2,Truth
+196,3 John,64,1,2,Prosperity
+197,Jude,65,1,24,Preservation
+198,Revelation,66,21,4,Restoration
+199,Genesis,1,22,18,Promise to Abraham
+200,Exodus,2,15,25,Healing
+201,Leviticus,3,26,9,Prosperity
+202,Numbers,4,23,20,Guidance
+203,Deuteronomy,5,30,19,Hope
+204,Joshua,6,23,24,Victory
+205,Judges,7,13,18,Encouragement
+206,Ruth,8,4,9,Commitment
+207,1 Samuel,9,7,12,Hope
+208,2 Samuel,10,20,4,Victory
+209,1 Kings,11,22,1,Restoration
+210,2 Kings,12,20,19,Healing
+211,1 Chronicles,13,7,14,Protection
+212,2 Chronicles,14,20,16,Peace
+213,Ezra,15,6,9,Restoration
+214,Nehemiah,16,2,20,Encouragement
+215,Esther,17,2,20,Protection
+216,Job,18,1,3,Comfort
+217,Psalms,19,19,1,Guidance
+218,Proverbs,20,4,7,Assurance
+219,Ecclesiastes,21,1,14,Contentment
+220,Song of Solomon,22,8,5,Love
+221,Isaiah,23,43,1,Deliverance
+222,Jeremiah,24,32,17,Restoration
+223,Lamentations,25,5,19,Comfort
+224,Ezekiel,26,37,26,Restoration
+225,Daniel,27,10,1,Protection
+226,Hosea,28,2,18,Healing
+227,Joel,29,3,21,Restoration
+228,Amos,30,9,11,Justice
+229,Obadiah,31,1,15,Victory
+230,Jonah,32,3,9,Deliverance
+231,Micah,33,4,10,Restoration
+232,Nahum,34,2,13,Victory
+233,Habakkuk,35,2,20,Faith
+234,Zephaniah,36,3,17,Restoration
+235,Haggai,37,1,13,Encouragement
+236,Zechariah,38,1,16,Hope
+237,Malachi,39,4,2,Provision
+238,Matthew,40,6,33,Provision
+239,Mark,41,10,27,Faith
+240,Luke,42,6,38,Generosity
+241,John,43,8,32,Freedom
+242,Acts,44,2,21,Salvation
+243,Romans,45,10,13,Salvation
+244,1 Corinthians,46,15,57,Victory
+245,2 Corinthians,47,4,16,Renewal
+246,Galatians,48,5,22,Fruitfulness
+247,Ephesians,49,2,10,Creation
+248,Philippians,50,1,6,Assurance
+249,Colossians,51,1,13,Deliverance
+250,1 Thessalonians,52,5,24,Faithfulness
+251,2 Thessalonians,53,2,16,Encouragement
+252,1 Timothy,54,6,15,Trust
+253,2 Timothy,55,4,18,Deliverance
+254,Titus,56,2,14,Hope
+255,Philemon,57,1,21,Encouragement
+256,Hebrews,58,10,23,Faithfulness
+257,James,59,4,7,Resisting Temptation
+258,1 Peter,60,1,5,Protection
+259,2 Peter,61,3,13,Hope
+260,1 John,62,2,25,Promise
+261,2 John,63,1,3,Truth
+262,3 John,64,1,4,Prosperity
+263,Jude,65,1,24,Preservation
+264,Revelation,66,12,10,Victory
+265,Genesis,1,28,15,Promise
+266,Exodus,2,14,14,Freedom
+267,Leviticus,3,26,12,Abundance
+268,Numbers,4,23,19,Guidance
+269,Deuteronomy,5,31,6,Promise
+270,Joshua,6,1,9,Victory
+271,Judges,7,6,16,Encouragement
+272,Ruth,8,1,16,Redemption
+273,1 Samuel,9,7,12,Hope
+274,2 Samuel,10,22,20,Protection
+275,1 Kings,11,17,14,Restoration
+276,2 Kings,12,20,19,Healing
+277,1 Chronicles,13,28,9,Guidance
+278,2 Chronicles,14,20,17,Security
+279,Ezra,15,1,7,Restoration
+280,Nehemiah,16,1,10,Encouragement
+281,Esther,17,4,14,Protection
+282,Job,18,23,12,Comfort
+283,Psalms,19,19,14,Security
+284,Proverbs,20,3,5,Trust
+285,Ecclesiastes,21,3,14,Contentment
+286,Song of Solomon,22,4,7,Love
+287,Isaiah,23,41,10,Encouragement
+288,Jeremiah,24,29,11,Hope
+289,Lamentations,25,3,22,Restoration
+290,Ezekiel,26,34,16,Provision
+291,Daniel,27,9,14,Deliverance
+292,Hosea,28,14,4,Love
+293,Joel,29,2,13,Restoration
+294,Amos,30,5,14,Justice
+295,Obadiah,31,1,17,Victory
+296,Jonah,32,2,2,Restoration
+297,Micah,33,7,7,Deliverance
+298,Nahum,34,1,7,Judgment
+299,Habakkuk,35,3,19,Faith
+300,Zephaniah,36,3,17,Restoration
+301,Haggai,37,2,5,Encouragement
+302,Zechariah,38,8,12,Hope
+303,Malachi,39,3,10,Provision
+304,Matthew,40,7,7,Answer to Prayer
+305,Mark,41,11,24,Faith
+306,Luke,42,12,32,Encouragement
+307,John,43,14,27,Peace
+308,Acts,44,16,31,Salvation
+309,Romans,45,8,28,Assurance
+310,1 Corinthians,46,10,13,Strength
+311,2 Corinthians,47,1,20,Promises
+312,Galatians,48,6,9,Perseverance
+313,Ephesians,49,3,20,Abundance
+314,Philippians,50,4,6,Peace
+315,Colossians,51,3,2,Focus
+316,1 Thessalonians,52,5,23,Sanctification
+317,2 Thessalonians,53,3,3,Protection
+318,1 Timothy,54,1,15,Trust
+319,2 Timothy,55,1,7,Fearlessness
+320,Titus,56,3,7,Inheritance
+321,Philemon,57,1,6,Encouragement
+322,Hebrews,58,13,5,Contentment
+323,James,59,1,12,Perseverance
+324,1 Peter,60,5,7,Care
+325,2 Peter,61,1,4,Divine Nature
+326,1 John,62,1,9,Forgiveness
+327,2 John,63,1,2,Truth
+328,3 John,64,1,2,Prosperity
+329,Jude,65,1,24,Preservation
+330,Revelation,66,21,4,Restoration
+331,Genesis,1,1,1,New Year Blessing
+332,Exodus,2,23,5,New Year Blessing
+333,Leviticus,3,26,12,New Year Blessing
+334,Numbers,4,6,24,New Year Blessing
+335,Deuteronomy,5,28,12,New Year Blessing
+336,Joshua,6,1,2,New Year Blessing
+337,1 Samuel,7,12,14,New Year Blessing
+338,2 Samuel,8,14,15,New Year Blessing
+339,1 Chronicles,9,4,25,New Year Blessing
+340,2 Chronicles,10,12,9,New Year Blessing
+341,Isaiah,23,43,19,New Year Blessing
+342,Jeremiah,24,29,11,New Year Blessing
+343,Matthew,40,5,16,New Year Blessing
+344,Mark,41,11,24,New Year Blessing
+345,Luke,42,2,14,New Year Blessing
+346,John,43,14,13,New Year Blessing
+347,Acts,44,1,8,New Year Blessing
+348,Romans,45,15,13,New Year Blessing
+349,1 Corinthians,46,16,23,New Year Blessing
+350,Philippians,50,1,6,New Year Blessing
+351,1 Peter,60,1,3,New Year Blessing
+352,Psalm,19,20,13,New Year Blessing
+353,Job,18,23,10,New Year Blessing
+354,Exodus,2,23,16,Ash Wednesday
+355,Joel,29,2,13,Ash Wednesday
+356,Isaiah,23,58,6,Ash Wednesday
+357,Lamentations,25,3,22,Ash Wednesday
+358,Matthew,40,6,16,Ash Wednesday
+359,Matthew,40,21,9,Palm Sunday
+360,Mark,41,11,9,Palm Sunday
+361,Luke,42,19,38,Palm Sunday
+362,John,43,12,13,Palm Sunday
+363,Isaiah,23,53,5,Maundy Thursday
+364,John,43,13,34,Maundy Thursday
+365,Isaiah,23,25,7,Good Friday
+366,Matthew,40,27,46,Good Friday
+367,Mark,41,15,34,Good Friday
+368,Luke,42,23,34,Good Friday
+369,John,43,19,30,Good Friday
+370,Romans,45,5,8,Good Friday
+371,Hebrews,58,9,28,Good Friday
+372,Revelation,66,1,5,Good Friday
+373,Matthew,40,28,6,Easter
+374,Mark,41,16,6,Easter
+375,Luke,42,24,6,Easter
+376,John,43,20,19,Easter
+377,Acts,44,2,1,Easter
+378,Romans,45,6,4,Easter
+379,1 Corinthians,46,15,20,Easter
+380,Revelation,66,21,4,Easter
+381,Isaiah,23,9,6,Christmas
+382,Micah,33,5,2,Christmas
+383,Matthew,40,1,21,Christmas
+384,Luke,42,2,11,Christmas
+385,John,43,1,14,Christmas
+386,John,43,3,16,Christmas
+387,Acts,44,4,12,Christmas
+388,Romans,45,6,23,Christmas
+389,Hebrews,58,13,8,Christmas
+390,Philippians,50,2,7,Christmas
+391,Exodus,2,12,22,Independence Day Israel
+392,Leviticus,3,26,9,Independence Day Israel
+393,Isaiah,23,60,1,Independence Day Israel
+394,Jeremiah,24,29,11,Independence Day Israel
+395,Exodus,2,12,14,Independence Day India
+396,Psalm,19,8,11,Independence Day India
+397,Jeremiah,24,29,11,Independence Day India
+398,Matthew,40,21,22,Independence Day India

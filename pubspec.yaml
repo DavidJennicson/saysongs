@@ -1,0 +1,43 @@
+name: saysongs
+description: "A new Flutter project."
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  html: ^0.15.4
+  flutter_widget_from_html_core: ^0.15.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  sqflite: ^2.0.0+4
+  path_provider: ^2.0.10
+  path: ^1.8.0
+  flutter_svg: 0.22.0
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/secondfin.db
+    - assets/tsa.svg
+    - assets/icons/bible.svg
+
+  fonts:
+    - family: InterTight
+      fonts:
+        - asset: assets/fonts/InterTight-VariableFont_wght.ttf
+    - family: MuktaMalar
+      fonts:
+        - asset: assets/fonts/MuktaMalar-Regular.ttf
+    - family: PTSerif-Regular
+      fonts:
+        - asset: assets/fonts/PTSerif-Regular.ttf
