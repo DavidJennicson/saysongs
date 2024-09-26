@@ -10,7 +10,9 @@ import 'dart:io';
 
 class DatabaseHelper {
   static final DatabaseHelper _instance = DatabaseHelper._internal();
+
   factory DatabaseHelper() => _instance;
+
   DatabaseHelper._internal();
 
   static Database? _database;
@@ -37,7 +39,8 @@ class DatabaseHelper {
     }
   }
 
-  Future<List<String>> getVerses(int book, int chapter, String language, {bool convertToUnicode = true}) async {
+  Future<List<String>> getVerses(int book, int chapter, String language,
+      {bool convertToUnicode = true}) async {
     final db = await database;
     String tableName;
 
@@ -69,7 +72,8 @@ class DatabaseHelper {
   }
 
   // Method to get song titles starting with a specific alphabet
-  Future<List<Map<String, dynamic>>> getSongTitlesByAlphabet(String alphabet) async {
+  Future<List<Map<String, dynamic>>> getSongTitlesByAlphabet(
+      String alphabet) async {
     final db = await database;
     print("fffffffff");
     final List<Map<String, dynamic>> result = await db.query(
@@ -83,7 +87,7 @@ class DatabaseHelper {
   }
 
   // Method to get Tamil text by song ID
-  Future<String?> getTamilTextBySongId(int songId,String language) async {
+  Future<String?> getTamilTextBySongId(int songId, String language) async {
     final db = await database;
     final List<Map<String, dynamic>> result = await db.query(
       'songlyrics',
@@ -91,15 +95,16 @@ class DatabaseHelper {
       whereArgs: [songId],
     );
 
-    if (result.isNotEmpty&&language=='Tamil') {
+    if (result.isNotEmpty && language == 'Tamil') {
       print(result);
-      return TamilConverter.convertToUnicode(result.first['lyrics_html']) as String?;
+      return TamilConverter.convertToUnicode(
+          result.first['lyrics_html']) as String?;
     }
-    else if(result.isNotEmpty&&language=='English')
-    {
+    else if (result.isNotEmpty && language == 'English') {
       print("hihihi");
-      var t= TamilTransliterator();
-      return t.transliterate(TamilConverter.convertToUnicode(result.first['lyrics_html'])) as String?;
+      var t = TamilTransliterator();
+      return t.transliterate(TamilConverter.convertToUnicode(
+          result.first['lyrics_html'])) as String?;
     }
     return null;
   }
@@ -124,6 +129,7 @@ class DatabaseHelper {
     print(result);
     return result; // This will return a list of maps with songid and song_title
   }
+
   // Method to get lyrics by song ID from tsatamsong_lyrics table
   Future<String?> getLyricsBySongId(int songId, int lang) async {
     final db = await database;
@@ -134,16 +140,16 @@ class DatabaseHelper {
     );
 
 
-    if (result.isNotEmpty&&lang==0) {
+    if (result.isNotEmpty && lang == 0) {
       return result.first['song_lyrics'] as String?;
     }
-    else if (result.isNotEmpty&&lang==1)
-      {
-          var t= TamilTransliterator();
-        return t.transliterate(result.first['song_lyrics']) as String?;
-      }
+    else if (result.isNotEmpty && lang == 1) {
+      var t = TamilTransliterator();
+      return t.transliterate(result.first['song_lyrics']) as String?;
+    }
     return null;
   }
+
   Future<String?> getEngLyricsBySongId(int songId) async {
     final db = await database;
     final List<Map<String, dynamic>> result = await db.query(
@@ -153,11 +159,10 @@ class DatabaseHelper {
     );
 
 
-
-      return result.first['lyrics'] as String?;
-      print(result);
-
+    return result.first['lyrics'] as String?;
+    print(result);
   }
+
   // Method to fetch verse based on occasion if the date matches
   Future<Map<String, dynamic>?> getVerseForOccasion() async {
     final db = await database;
@@ -197,11 +202,16 @@ class DatabaseHelper {
   String checkSpecialOccasion(DateTime today) {
     // Define special dates (example uses exact dates for simplicity)
     final newYear = DateTime(today.year, 1, 1);
-    final ashWednesday = calculateAshWednesday(today.year); // Calculate based on year
-    final palmSunday = calculatePalmSunday(today.year); // Calculate based on year
-    final maundyThursday = calculateMaundyThursday(today.year); // Calculate based on year
-    final goodFriday = calculateGoodFriday(today.year); // Calculate based on year
-    final easterSunday = calculateEasterSunday(today.year); // Calculate based on year
+    final ashWednesday = calculateAshWednesday(
+        today.year); // Calculate based on year
+    final palmSunday = calculatePalmSunday(
+        today.year); // Calculate based on year
+    final maundyThursday = calculateMaundyThursday(
+        today.year); // Calculate based on year
+    final goodFriday = calculateGoodFriday(
+        today.year); // Calculate based on year
+    final easterSunday = calculateEasterSunday(
+        today.year); // Calculate based on year
     final independenceDayIndia = DateTime(today.year, 8, 15);
     final independenceDayIsrael = DateTime(today.year, 4, 18); // Example date
     final christmasStart = DateTime(today.year, 12, 20);
@@ -214,9 +224,12 @@ class DatabaseHelper {
     if (today.isAtSameMomentAs(maundyThursday)) return "Maundy Thursday";
     if (today.isAtSameMomentAs(goodFriday)) return "Good Friday";
     if (today.isAtSameMomentAs(easterSunday)) return "Easter";
-    if (today.isAfter(christmasStart) && today.isBefore(christmasEnd.add(Duration(days: 1)))) return "Christmas";
-    if (today.isAtSameMomentAs(independenceDayIndia)) return "Independence Day India";
-    if (today.isAtSameMomentAs(independenceDayIsrael)) return "Independence Day Israel";
+    if (today.isAfter(christmasStart) &&
+        today.isBefore(christmasEnd.add(Duration(days: 1)))) return "Christmas";
+    if (today.isAtSameMomentAs(independenceDayIndia))
+      return "Independence Day India";
+    if (today.isAtSameMomentAs(independenceDayIsrael))
+      return "Independence Day Israel";
 
     return ""; // No special occasion
   }
@@ -265,7 +278,7 @@ class DatabaseHelper {
     return calculateEasterSunday(year).subtract(Duration(days: 2));
   }
 
-  // Method to fetch a random unused verse if no occasion is found
+
   Future<Map<String, dynamic>?> getRandomUnusedVerse() async {
     final db = await database;
 
@@ -278,7 +291,7 @@ class DatabaseHelper {
     LIMIT 1
     '''
     );
-    print(randomUnusedVerse);
+
     if (randomUnusedVerse.isEmpty) {
       return null; // If no unused verses are available, return null
     }
@@ -287,7 +300,7 @@ class DatabaseHelper {
     Map<String, dynamic> randomPromiseVerse = randomUnusedVerse.first;
 
     // Increment the BookIndex by 1 to match the `book` index in the engbible table
-    int book = randomPromiseVerse['BookIndex']-1  ;
+    int book = randomPromiseVerse['BookIndex'] - 1;
     int chapter = randomPromiseVerse['Chapter'];
     int verseNumber = randomPromiseVerse['Verse'];
 
@@ -297,12 +310,15 @@ class DatabaseHelper {
       where: 'book = ? AND chapter = ? AND versecount = ?',
       whereArgs: [book, chapter, verseNumber],
     );
-    print(verseResult);
+
     if (verseResult.isNotEmpty) {
-      // Mark the selected promiseverse as used
+      // Mark the selected promiseverse as used and update the Date
       await db.update(
         'promiseverse',
-        {'Used': 1},
+        {
+          'Used': 1,
+          'Date': int.parse('${DateTime.now().year}${DateTime.now().month.toString().padLeft(2, '0')}${DateTime.now().day.toString().padLeft(2, '0')}')
+        },
         where: 'SrNo = ?',
         whereArgs: [randomPromiseVerse['SrNo']],
       );
@@ -318,18 +334,69 @@ class DatabaseHelper {
       return null; // If no corresponding verse is found
     }
   }
-
-
-  // Method to fetch the verse for today
   Future<Map<String, dynamic>?> getDailyVerse() async {
-    // Try to get a verse based on today's occasion
-    var occasionVerse = await getVerseForOccasion();
-    if (occasionVerse != null) {
-      return occasionVerse;
+    final db = await database;
+
+    // Get today's date in a specific integer format YYYYMMDD
+    DateTime today = DateTime.now();
+    int todayInt = int.parse('${today.year}${today.month.toString().padLeft(2, '0')}${today.day.toString().padLeft(2, '0')}');
+
+    // Check if a verse has already been used today
+    final List<Map<String, dynamic>> dailyVerseCheck = await db.query(
+      'promiseverse',
+      where: 'Date = ? AND Used = 1',
+      whereArgs: [todayInt],
+    );
+
+    if (dailyVerseCheck.isNotEmpty) {
+      // If there is already a verse used today, return that verse
+      Map<String, dynamic> dailyVerse = dailyVerseCheck.first;
+
+      // Fetch the corresponding verse from the engbible table
+      final List<Map<String, dynamic>> verseResult = await db.query(
+        'engbible',
+        where: 'book = ? AND chapter = ? AND versecount = ?',
+        whereArgs: [dailyVerse['BookIndex'] - 1, dailyVerse['Chapter'], dailyVerse['Verse']],
+      );
+
+      if (verseResult.isNotEmpty) {
+        return {
+          'Book': dailyVerse['Book'],
+          'Chapter': dailyVerse['Chapter'],
+          'Verse': dailyVerse['Verse'],
+          'VerseText': verseResult.first['verse'], // The verse text from engbible
+        };
+      }
     }
 
-    // If no occasion matches, fetch a random unused verse
-    return await getRandomUnusedVerse();
-  }
-}
+    // If no verse found for today, fetch a random unused verse
+    Map<String, dynamic>? randomVerse = await getRandomUnusedVerse();
+    if (randomVerse != null) {
+      // Mark the selected random verse as used and update the Date
+      await db.update(
+        'promiseverse',
+        {
+          'Used': 1,
+          'Date': todayInt,
+        },
+        where: 'SrNo = ?',
+        whereArgs: [randomVerse['SrNo']],
+      );
 
+      // Return the random verse text and the other details
+      return {
+        'Book': randomVerse['Book'],
+        'Chapter': randomVerse['Chapter'],
+        'Verse': randomVerse['Verse'],
+        'VerseText': randomVerse['VerseText'],
+      };
+    }
+
+    return null; // If no random verse is available
+  }
+
+  // Method to get VerseLanguage
+
+
+// Method to fetch a random unused verse if no occasion is found
+}

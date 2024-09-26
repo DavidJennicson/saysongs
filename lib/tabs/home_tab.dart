@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:saysongs/bible/englishbiblebooks.dart';
+import 'package:saysongs/bible/tamilbiblebooks.dart';
+import 'package:saysongs/tabs/songs_tab.dart';
+import 'package:saysongs/tsafunctions/engsongs/engsongtsa.dart';
+import 'package:saysongs/tsafunctions/tamsongs/tamilsongstsa.dart';
 
 import '../databasecon/database_helper.dart';
 import '../tsafunctions/doctrine/doctrine.dart';
@@ -121,7 +126,7 @@ class _HomeTabState extends State<HomeTab> {
                 ),
                 const SizedBox(height: 16.0),
                 Text(
-                  'Options',
+                  'Quick Menu',
                   style: TextStyle(
                     fontSize: _getFontSize(context, isLargeScreen: true),
                     fontWeight: FontWeight.bold,
@@ -191,6 +196,7 @@ class _HomeTabState extends State<HomeTab> {
                       fontSize: _getFontSize(context, isLargeScreen: false),
                       fontFamily: 'InterTight',
                       color: subtitleColor,
+
                     ),
                   ),
                 ],
@@ -220,18 +226,52 @@ class _HomeTabState extends State<HomeTab> {
             width: double.infinity,
             child: CupertinoButton(
               onPressed: () {
+
                 // Check if the button title is 'Doctrine'
                 if (details['title'] == 'Doctrine') {
                   // Navigate to the BeliefStatement widget
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => BeliefStatement()),
+                    CupertinoPageRoute(builder: (context) => BeliefStatement()),
                   );
-                } else {
+                }
+                else if(details['title']=='Christian Songs Tamil')
+                  {
+                    Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => ChristianSongsPage(),
+                      ),
+                    );
+                  }
+                else if(details['title']=='TSA Songbook English')
+                {
+                  Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => EnglishSongsPage(),
+                    ),
+                  );
+                }
+                else if(details['title']=='TSA Songbook Tamil')
+                {
+                  Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => TamilSongsPage(),
+                    ),
+                  );
+                }
+                else if(details['title']=='English Bible'){
+                  Navigator.push(context, CupertinoPageRoute(builder:(context)=>EnglishBibleTab()));
+                  // Add your other button actions here
+                }
+                else if(details['title']=='Tamil Bible'){
+                  Navigator.push(context, CupertinoPageRoute(builder:(context)=>TamilBibleTab()));
                   // Add your other button actions here
                 }
               },
-              color: redColor,
+              color: CupertinoColors.destructiveRed,
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               borderRadius: BorderRadius.circular(12),
               child: Row(

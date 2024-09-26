@@ -4,7 +4,7 @@ import 'dart:async';
 import 'tabs/home_tab.dart';
 import 'tabs/bible_tab.dart';
 import 'tabs/songs_tab.dart';
-import 'tabs/settings_tab.dart';
+
 import 'package:flutter_svg/flutter_svg.dart';
 void main() async {
 
@@ -150,10 +150,7 @@ class _MainPageState extends State<MainPage> {
             icon: Icon(CupertinoIcons.music_note),
             label: 'Songs',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
+
         ],
         activeColor: Colors.red,
       ),
@@ -165,9 +162,7 @@ class _MainPageState extends State<MainPage> {
             return CupertinoTabView(builder: (context) => const BibleTab());
           case 2:
             return CupertinoTabView(builder: (context) => const SongsTab());
-          case 3:
-            return CupertinoTabView(builder: (context) => const SettingsTab());
-          default:
+             default:
             return CupertinoTabView(builder: (context) => const HomeTab());
         }
       },

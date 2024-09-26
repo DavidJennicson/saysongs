@@ -83,6 +83,7 @@ class _EnglishLyricsPageState extends State<EnglishLyricsPage> {
                           convertToHtml(htmlContent),
                           textStyle: TextStyle(
                             color: textColor,
+                            fontFamily: "PTSerif-Regular",
                             fontSize: 19,
                             // Apply custom font
                           ),

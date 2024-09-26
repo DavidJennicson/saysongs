@@ -13,7 +13,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   html: ^0.15.4
   flutter_widget_from_html_core: ^0.15.2
-
+  cupertino_setting_control: ^1.1.0
+  cupertino_lists_enhanced: ^0.0.5
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -29,6 +30,7 @@ flutter:
   assets:
     - assets/secondfin.db
     - assets/tsa.svg
+    - assets/finlogo.svg
     - assets/icons/bible.svg
 
   fonts:
