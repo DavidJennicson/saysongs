@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'database_helper.dart'; // Import the database helper
+import '../databasecon/database_helper.dart'; // Import the database helper
 
 class VersesPage extends StatefulWidget {
   final String book;

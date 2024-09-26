@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart'; // Add this for SVG support
-import 'package:saysongs/verses_page.dart';
+import 'package:saysongs/bible/verses_page.dart';
 
 class BibleTab extends StatefulWidget {
   const BibleTab({Key? key}) : super(key: key);

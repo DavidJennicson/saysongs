@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:saysongs/database_helper.dart'; // Import your DatabaseHelper
-import 'package:saysongs/christiantamilsong.dart';
-import 'package:saysongs/tamilconverter.dart'; // Import the TamilTextPage
+import 'package:saysongs/databasecon/database_helper.dart'; // Import your DatabaseHelper
+import 'package:saysongs/songs/christiantamilsong.dart';
+import 'package:saysongs/langutils/tamilconverter.dart'; // Import the TamilTextPage
 
 class SongsByAlphabetPage extends StatefulWidget {
   final String alphabet;

@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'database_helper.dart';
+import '../databasecon/database_helper.dart';
+import '../tsafunctions/doctrine/doctrine.dart';
  // Import the database helper
 
 class HomeTab extends StatefulWidget {
@@ -208,7 +209,7 @@ class _HomeTabState extends State<HomeTab> {
       {'title': 'TSA Songbook English', 'icon': Icons.music_note, 'subtitle': 'Eng'},
       {'title': 'TSA Songbook Tamil', 'icon': Icons.music_note, 'subtitle': 'தமிழ்'},
       {'title': 'Christian Songs Tamil', 'icon': Icons.music_note, 'subtitle': 'தமிழ்'},
-      {'title': 'Doctrine', 'icon': Icons.book, 'subtitle': ''},
+      {'title': 'Doctrine', 'icon': Icons.book, 'subtitle': ''}, // This is the Doctrine button
     ];
 
     return Column(
@@ -219,7 +220,16 @@ class _HomeTabState extends State<HomeTab> {
             width: double.infinity,
             child: CupertinoButton(
               onPressed: () {
-                // Add your button action here
+                // Check if the button title is 'Doctrine'
+                if (details['title'] == 'Doctrine') {
+                  // Navigate to the BeliefStatement widget
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BeliefStatement()),
+                  );
+                } else {
+                  // Add your other button actions here
+                }
               },
               color: redColor,
               padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -230,7 +240,7 @@ class _HomeTabState extends State<HomeTab> {
                 children: [
                   if (details['icon'] is String)
                     Padding(
-                      padding: const EdgeInsets.only(left: 10.0), // Added left margin to icons
+                      padding: const EdgeInsets.only(left: 10.0),
                       child: SvgPicture.asset(
                         details['icon'],
                         color: CupertinoColors.white,
@@ -240,7 +250,7 @@ class _HomeTabState extends State<HomeTab> {
                     )
                   else
                     Padding(
-                      padding: const EdgeInsets.only(left: 10.0), // Added left margin to icons
+                      padding: const EdgeInsets.only(left: 10.0),
                       child: Icon(
                         details['icon'],
                         color: CupertinoColors.white,

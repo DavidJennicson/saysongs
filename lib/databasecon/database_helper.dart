@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:saysongs/tamilconverter.dart';
-import 'package:saysongs/tamiltransliterator.dart';
+import 'package:saysongs/langutils/tamilconverter.dart';
+import 'package:saysongs/langutils/tamiltransliterator.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'package:flutter/services.dart' show rootBundle;
@@ -287,7 +287,7 @@ class DatabaseHelper {
     Map<String, dynamic> randomPromiseVerse = randomUnusedVerse.first;
 
     // Increment the BookIndex by 1 to match the `book` index in the engbible table
-    int book = randomPromiseVerse['BookIndex']-1;
+    int book = randomPromiseVerse['BookIndex']-1  ;
     int chapter = randomPromiseVerse['Chapter'];
     int verseNumber = randomPromiseVerse['Verse'];
 

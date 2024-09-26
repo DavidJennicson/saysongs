@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:saysongs/engsongtsa.dart';
-import 'package:saysongs/songbyalphabetpage.dart';
-import 'package:saysongs/tamilsongstsa.dart';
+import 'package:saysongs/tsafunctions/engsongs/engsongtsa.dart';
+import 'package:saysongs/songs/chsongbyalphabetpage.dart';
+import 'package:saysongs/tsafunctions/tamsongs/tamilsongstsa.dart';
 class SongsTab extends StatelessWidget {
   const SongsTab({Key? key}) : super(key: key);
 

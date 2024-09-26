@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'home_tab.dart';
-import 'bible_tab.dart';
-import 'songs_tab.dart';
-import 'settings_tab.dart';
+import 'tabs/home_tab.dart';
+import 'tabs/bible_tab.dart';
+import 'tabs/songs_tab.dart';
+import 'tabs/settings_tab.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 void main() async {
 

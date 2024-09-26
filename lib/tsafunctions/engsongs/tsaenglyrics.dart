@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart'; // For Cupertino widgets
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
-import 'package:saysongs/database_helper.dart';
+import 'package:saysongs/databasecon/database_helper.dart';
 
 class EnglishLyricsPage extends StatefulWidget {
   final int songId;
 
-  EnglishLyricsPage({required this.songId});
+  const EnglishLyricsPage({super.key, required this.songId});
 
   @override
   _EnglishLyricsPageState createState() => _EnglishLyricsPageState();

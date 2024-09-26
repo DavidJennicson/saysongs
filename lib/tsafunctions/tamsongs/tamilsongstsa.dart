@@ -1,15 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart'; // Import this for CupertinoScrollbar
-import 'package:saysongs/database_helper.dart';
-import 'package:saysongs/tsaenglyrics.dart';
+import 'package:saysongs/databasecon/database_helper.dart';
 import 'lyrics_page.dart'; // Import the new page
 
-class EnglishSongsPage extends StatefulWidget {
+class TamilSongsPage extends StatefulWidget {
   @override
-  _EnglishSongsPageState createState() => _EnglishSongsPageState();
+  _TamilSongsPageState createState() => _TamilSongsPageState();
 }
 
-class _EnglishSongsPageState extends State<EnglishSongsPage> {
+class _TamilSongsPageState extends State<TamilSongsPage> {
   final TextEditingController _searchController = TextEditingController();
   List<Map<String, dynamic>> _songs = [];
   List<Map<String, dynamic>> _filteredSongs = [];
@@ -22,7 +21,7 @@ class _EnglishSongsPageState extends State<EnglishSongsPage> {
   }
 
   Future<void> _fetchSongs() async {
-    final songs = await DatabaseHelper().getAllEngSongTitles();
+    final songs = await DatabaseHelper().getAllSongTitles();
     setState(() {
       _songs = songs;
       _filteredSongs = songs;
@@ -33,7 +32,7 @@ class _EnglishSongsPageState extends State<EnglishSongsPage> {
     final query = _searchController.text.toLowerCase();
     setState(() {
       _filteredSongs = _songs.where((song) {
-        final songTitle = song['heading'].toLowerCase();
+        final songTitle = song['song_title'].toLowerCase();
         return songTitle.contains(query);
       }).toList();
     });
@@ -49,7 +48,7 @@ class _EnglishSongsPageState extends State<EnglishSongsPage> {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
-        middle: Text('Salvation Army Songs (English)'),
+        middle: Text('Salvation Army Songs (Tamil)'),
       ),
       child: SafeArea(
         child: Column(
@@ -73,17 +72,16 @@ class _EnglishSongsPageState extends State<EnglishSongsPage> {
                   itemCount: _filteredSongs.length,
                   itemBuilder: (context, index) {
                     final song = _filteredSongs[index];
-                    final songId = song['song'];
-                    final songTitle = song['heading'];
+                    final songId = song['songid'];
+                    final songTitle = song['song_title'];
 
                     return CupertinoListTile(
                       title: Text(songTitle),
                       onTap: () {
-                        print(songId);
                         Navigator.push(
                           context,
                           CupertinoPageRoute(
-                            builder: (context) => EnglishLyricsPage(songId: songId),
+                            builder: (context) => LyricsPage(songId: songId),
                           ),
                         );
                       },
