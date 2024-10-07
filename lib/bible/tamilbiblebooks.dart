@@ -257,7 +257,7 @@ class _TamilBibleTabState extends State<TamilBibleTab> {
 
                                               TamilVersePage(
                                                 book: book,
-                                                chapter: index +1,
+                                                chapter: index+1 ,
                                               ),
                                         ),
                                       );

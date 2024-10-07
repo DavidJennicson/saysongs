@@ -43,22 +43,30 @@ class DatabaseHelper {
       {bool convertToUnicode = true}) async {
     final db = await database;
     String tableName;
-
+    List<String> verses;
     // Determine the table name based on the language
     if (language == 'English') {
       tableName = 'engbible';
+      final List<Map<String, dynamic>> result = await db.query(
+        tableName,
+        where: 'book = ? AND chapter = ?',
+        whereArgs: [book+1, chapter],
+      );
+      verses = result.map((map) => map['verse'] as String).toList();
     } else {
       tableName = 'tambible';
+      final List<Map<String, dynamic>> result = await db.query(
+        tableName,
+        where: 'book = ? AND chapter = ?',
+        whereArgs: [book, chapter],
+      );
+      verses = result.map((map) => map['verse'] as String).toList();
     }
 
-    final List<Map<String, dynamic>> result = await db.query(
-      tableName,
-      where: 'book = ? AND chapter = ?',
-      whereArgs: [book+1, chapter],
-    );
+
 
     // Extract the verse text from each result map
-    List<String> verses = result.map((map) => map['verse'] as String).toList();
+
 
     // Convert to Unicode if needed
     print(verses);

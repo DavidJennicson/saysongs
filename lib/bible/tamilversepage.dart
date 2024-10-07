@@ -162,7 +162,8 @@ class _TamilVersePageState extends State<TamilVersePage> {
 
   Future<List<String>> _fetchVerses() async {
     final dbHelper = DatabaseHelper();
-    return await dbHelper.getVerses(tamilBibleBooks[widget.book]!, widget.chapter, 'Tamil'); // Fetch Tamil verses
+    print(dbHelper.getVerses((tamilBibleBooks[widget.book]!), widget.chapter, 'Tamil'));
+    return await dbHelper.getVerses((tamilBibleBooks[widget.book]!), widget.chapter, 'Tamil'); // Fetch Tamil verses
   }
 
   @override
@@ -171,8 +172,12 @@ class _TamilVersePageState extends State<TamilVersePage> {
 
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text('${widget.book} Chapter ${widget.chapter}'),
-      ),
+        middle: Text(
+          '${widget.book} Chapter ${widget.chapter}',
+          style: TextStyle(fontSize: 14), // Adjust the font size as needed
+        ),
+      )
+      ,
       child: SafeArea(
         child: FutureBuilder<List<String>>(
           future: _versesFuture,
