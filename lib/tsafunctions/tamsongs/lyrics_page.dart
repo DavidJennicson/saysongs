@@ -6,7 +6,7 @@ import 'package:saysongs/databasecon/database_helper.dart';
 class LyricsPage extends StatefulWidget {
   final int songId;
 
-  LyricsPage({required this.songId});
+  const LyricsPage({Key? key, required this.songId}) : super(key: key);
 
   @override
   _LyricsPageState createState() => _LyricsPageState();
@@ -16,7 +16,6 @@ class _LyricsPageState extends State<LyricsPage> {
   int _selectedSegment = 0; // 0 for Tamil, 1 for English
 
   Future<String?> _fetchLyrics() async {
-    // Fetch the lyrics based on the selected segment
     return await DatabaseHelper().getLyricsBySongId(widget.songId, _selectedSegment);
   }
 
@@ -73,14 +72,12 @@ class _LyricsPageState extends State<LyricsPage> {
                     return CupertinoScrollbar(
                       child: SingleChildScrollView(
                         padding: const EdgeInsets.all(16.0),
-                        // child: Text(htmlContent),
                         child: HtmlWidget(
                           htmlContent,
                           textStyle: TextStyle(
                             color: textColor,
-                            fontSize: 19,
-
-                            // Apply custom font
+                            fontSize: _selectedSegment==0?24:21,
+                            fontFamily: _selectedSegment == 0 ? 'MuktaMalar' : 'PTSerif-Regular', // Change font based on segment
                           ),
                         ),
                       ),

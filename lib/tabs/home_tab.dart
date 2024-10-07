@@ -7,9 +7,11 @@ import 'package:saysongs/tabs/songs_tab.dart';
 import 'package:saysongs/tsafunctions/engsongs/engsongtsa.dart';
 import 'package:saysongs/tsafunctions/tamsongs/tamilsongstsa.dart';
 
+import '../bible/tamilversepage.dart';
+import '../bible/verses_page.dart';
 import '../databasecon/database_helper.dart';
 import '../tsafunctions/doctrine/doctrine.dart';
- // Import the database helper
+// Import the database helper
 
 class HomeTab extends StatefulWidget {
   const HomeTab({Key? key}) : super(key: key);
@@ -21,26 +23,47 @@ class HomeTab extends StatefulWidget {
 class _HomeTabState extends State<HomeTab> {
   String? todayVerse;
   String? todayVerseReference;
-
+  String? lastBook;
+  int? lastChapter;
   @override
   void initState() {
     super.initState();
-    _fetchTodayVerse();
+   _fetchTodayVerse();
+    _fetchLastBookAndChapter();
+  }
+
+
+
+  Future<void> _fetchLastBookAndChapter() async {
+    final dbHelper = DatabaseHelper();
+    Map<String, dynamic>? lastData = await dbHelper.fetchLastBookAndChapter();
+
+    if (lastData != null) {
+      setState(() {
+        lastBook = lastData['Lastbook'] ?? 'No last book found';
+        lastChapter = lastData['Lastchap'];
+        print(lastBook);
+      });
+    }
   }
 
   Future<void> _fetchTodayVerse() async {
-    // Fetch the verse from the database
-    final verseData = await DatabaseHelper().getDailyVerse();
+    final dbHelper = DatabaseHelper();
 
+    // Fetch the verse and update the date
+    Map<String, dynamic>? verseData = await dbHelper.fetchRandomVerseAndUpdateDate();
+
+    // If verseData is not null, update todayVerse and todayVerseReference
     if (verseData != null) {
       setState(() {
-        todayVerse = verseData['VerseText']; // Set the fetched verse text
-        todayVerseReference = '${verseData['Book']} ${verseData['Chapter']}:${verseData['Verse']}';
+        todayVerse = verseData['Verse'];
+        todayVerseReference = verseData['Reference'];
       });
     } else {
+      // Handle case where no verse was found
       setState(() {
-        todayVerse = 'No verse available for today';
-        todayVerseReference = '';
+        todayVerse = "No verse found.";
+        todayVerseReference = "";
       });
     }
   }
@@ -68,7 +91,10 @@ class _HomeTabState extends State<HomeTab> {
         return 'Good Evening,';
       }
     }
-
+    bool isEnglishString(String str) {
+      // Check if the string contains only English letters
+      return RegExp(r'^[a-zA-Z\s]+$').hasMatch(str);
+    }
     return CupertinoPageScaffold(
       backgroundColor: backgroundColor,
       navigationBar: CupertinoNavigationBar(
@@ -102,6 +128,7 @@ class _HomeTabState extends State<HomeTab> {
                     ),
                   ),
                 ),
+
                 _buildCard(
                   context,
                   title: "Today's Verse",
@@ -113,17 +140,67 @@ class _HomeTabState extends State<HomeTab> {
                   fullWidth: true,
                 ),
                 const SizedBox(height: 16.0),
-                _buildCard(
-                  context,
-                  title: 'Continue Reading',
-                  verse: 'You left off at Chapter 3 of Matthew.',
-                  textColor: textColor,
-                  subtitleColor: subtitleColor,
-                  cardColor: cardColor,
-                  borderColor: borderColor,
-                  fullWidth: true,
-                  icon: CupertinoIcons.book,
+                GestureDetector(
+                  onTap: () {
+
+                    if (lastBook == null || lastChapter == null) {
+                      // Show an alert dialog
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return CupertinoAlertDialog(
+                            title: Text('No Book Selected'),
+                            content: Text('You haven\'t chosen any book yet.'),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop(); // Close the dialog
+                                },
+                                child: Text('OK'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    } else {
+                      // Navigate to VersesPage with the selected book and chapter
+                      if (lastBook != null && isEnglishString(lastBook!)) {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) => VersesPage(
+                              book: lastBook ?? 'Genesis', // Pass the selected book
+                              chapter: lastChapter ?? 1, // Pass the selected chapter
+                            ),
+                          ),
+                        );
+                      } else {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) => TamilVersePage(
+                              book: lastBook ?? '0', // Pass the selected book
+                              chapter: lastChapter ?? 1, // Pass the selected chapter
+                            ),
+                          ),
+                        );
+                      }
+                    }
+
+                  },
+                  child: _buildCard(
+                    context,
+                    title: 'Continue Reading',
+                    verse: lastChapter != null ? 'You closed the app at Chapter $lastChapter of $lastBook.' : 'Loading...',
+                    textColor: textColor,
+                    subtitleColor: subtitleColor,
+                    cardColor: cardColor,
+                    borderColor: borderColor,
+                    fullWidth: true,
+                    icon: CupertinoIcons.book,
+                  ),
                 ),
+
                 const SizedBox(height: 16.0),
                 Text(
                   'Quick Menu',
@@ -236,14 +313,14 @@ class _HomeTabState extends State<HomeTab> {
                   );
                 }
                 else if(details['title']=='Christian Songs Tamil')
-                  {
-                    Navigator.push(
-                      context,
-                      CupertinoPageRoute(
-                        builder: (context) => ChristianSongsPage(),
-                      ),
-                    );
-                  }
+                {
+                  Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => ChristianSongsPage(),
+                    ),
+                  );
+                }
                 else if(details['title']=='TSA Songbook English')
                 {
                   Navigator.push(

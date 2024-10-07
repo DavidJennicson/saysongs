@@ -1,17 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:saysongs/tabs/navigation_service.dart';
 import 'dart:async';
 import 'tabs/home_tab.dart';
 import 'tabs/bible_tab.dart';
 import 'tabs/songs_tab.dart';
-
 import 'package:flutter_svg/flutter_svg.dart';
+
 void main() async {
-
-
   runApp(MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -35,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 5), () {
       if (mounted) {
         Navigator.pushReplacement(
           context,
@@ -53,20 +51,29 @@ class _SplashScreenState extends State<SplashScreen> {
           Expanded(
             child: Center(
               child: Column(
-                mainAxisSize: MainAxisSize.min, // Prevents the column from taking extra space
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   SvgPicture.asset(
-                    'assets/tsa.svg', // Path to your SVG asset
-                    width: 200.0, // Larger size
-                    height: 200.0, // Larger size
+                    'assets/tsa.svg',
+                    width: 200.0,
+                    height: 200.0,
                   ),
-                  SizedBox(height: 20), // Space between SVG and headline text
-                  Text(
-                    'Salvation Army Song Book',
+                  const SizedBox(height: 20),
+                  const Text(
+                    'The Salvation Army Hymns',
                     style: TextStyle(
                       fontFamily: 'InterTight',
-                      fontSize: 24.0, // Medium headline text size
-                      fontWeight: FontWeight.w700, // Adjust weight as needed
+                      fontSize: 26.0,
+                      fontWeight: FontWeight.w700,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const Text(
+                    'SING TO THE LORD WITH ALL YOUR HEART',
+                    style: TextStyle(
+                      fontFamily: 'InterTight',
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w500,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -75,45 +82,45 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 20.0), // Padding at the bottom
+            padding: const EdgeInsets.only(bottom: 20.0),
             child: Column(
               children: [
-                Text(
+                const Text(
                   'Developed by',
                   style: TextStyle(
                     fontFamily: 'InterTight',
-                    fontSize: 18.0, // Small text size
-                    fontWeight: FontWeight.w700, // Regular weight
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w700,
                   ),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 10), // Space between texts
-                Text(
+                const SizedBox(height: 10),
+                const Text(
                   'SAY Group',
                   style: TextStyle(
                     fontFamily: 'InterTight',
-                    fontSize: 30.0, // Big headline text size
-                    fontWeight: FontWeight.w800, // Bold weight
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.w800,
                   ),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 10), // Space between texts
-                Text(
+                const SizedBox(height: 10),
+                const Text(
                   'Salvation Army Youth Group',
                   style: TextStyle(
                     fontFamily: 'InterTight',
-                    fontSize: 24.0, // Medium headline text size
-                    fontWeight: FontWeight.w700, // Bold weight
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.w700,
                   ),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 10), // Space between texts
-                Text(
+                const SizedBox(height: 10),
+                const Text(
                   'TSA Sion Corps Mumbai',
                   style: TextStyle(
                     fontFamily: 'InterTight',
-                    fontSize: 18.0, // Adjust text size as needed
-                    fontWeight: FontWeight.w400, // Regular weight
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w400,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -125,47 +132,22 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 }
-class MainPage extends StatefulWidget {
+
+class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
 
   @override
-  _MainPageState createState() => _MainPageState();
-}
-
-class _MainPageState extends State<MainPage> {
-  @override
   Widget build(BuildContext context) {
-    return CupertinoTabScaffold(
-      tabBar: CupertinoTabBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.book),
-            label: 'Bible',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.music_note),
-            label: 'Songs',
-          ),
-
-        ],
-        activeColor: Colors.red,
+    return CupertinoPageScaffold(
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: const [
+            Expanded(child: HomeTab()), // Change this to display a specific tab's content
+            // If you want to allow navigation to different sections, you could add buttons to navigate.
+          ],
+        ),
       ),
-      tabBuilder: (context, index) {
-        switch (index) {
-          case 0:
-            return CupertinoTabView(builder: (context) => const HomeTab());
-          case 1:
-            return CupertinoTabView(builder: (context) => const BibleTab());
-          case 2:
-            return CupertinoTabView(builder: (context) => const SongsTab());
-             default:
-            return CupertinoTabView(builder: (context) => const HomeTab());
-        }
-      },
     );
   }
 }

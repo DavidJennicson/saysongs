@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:saysongs/tsafunctions/engsongs/engsongtsa.dart';
-import 'package:saysongs/songs/chsongbyalphabetpage.dart';
-import 'package:saysongs/tsafunctions/tamsongs/tamilsongstsa.dart';
+import 'package:saysongs/tsafunctions/engsongs/engsongtsa.dart'; // Import your English Songs page
+import 'package:saysongs/songs/chsongbyalphabetpage.dart'; // Import your Songs by Alphabet page
+import 'package:saysongs/tsafunctions/tamsongs/tamilsongstsa.dart'; // Import your Tamil Songs page
+import 'package:saysongs/tabs/navigation_service.dart'; // Import the NavigationService
+
 class SongsTab extends StatelessWidget {
   const SongsTab({Key? key}) : super(key: key);
 
@@ -33,13 +35,8 @@ class SongsTab extends StatelessWidget {
               context,
               title: 'Salvation Army Songs (English)',
               onTap: () {
-                Navigator.push(
-                  context,
-                  CupertinoPageRoute(
-                    builder: (context) => EnglishSongsPage(),
-                  ),
-                );
-                // Add navigation or action for English Salvation Army songs
+                // Use NavigationService to switch to the Songs tab and navigate to EnglishSongsPage
+                NavigationService().navigateToPageInTab(context, 2,  EnglishSongsPage());
               },
             ),
             const SizedBox(height: 16.0),
@@ -74,7 +71,6 @@ class SongsTab extends StatelessWidget {
     );
   }
 }
-
 
 class ChristianSongsPage extends StatelessWidget {
   @override

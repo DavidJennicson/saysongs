@@ -3,13 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart'; // Add this for SVG support
 import 'package:saysongs/bible/verses_page.dart';
 
+import '../databasecon/database_helper.dart';
+
 class EnglishBibleTab extends StatefulWidget {
   const EnglishBibleTab({Key? key}) : super(key: key);
 
   @override
   _EnglishBibleTabState createState() => _EnglishBibleTabState();
 }
-
+void updateBookAndChapter(String book, int chapter) async {
+  final dbHelper = DatabaseHelper();
+  await dbHelper.updateLastBookAndChapter(book, chapter);
+}
 class _EnglishBibleTabState extends State<EnglishBibleTab> {
   final Map<String, int> booksWithChapters = {
     'Genesis': 50,
@@ -173,10 +178,14 @@ class _EnglishBibleTabState extends State<EnglishBibleTab> {
                                       textAlign: TextAlign.center,
                                     ),
                                     onPressed: () {
+                                      print('${book} ${index + 1}');
+                                      updateBookAndChapter(book, index+1);
                                       Navigator.push(
                                         context,
                                         CupertinoPageRoute(
-                                          builder: (context) => VersesPage(
+                                          builder: (context) =>
+
+                                              VersesPage(
                                             book: book,
                                             chapter: index + 1,
                                           ),

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:saysongs/databasecon/database_helper.dart';
-import 'package:saysongs/langutils/tamiltransliterator.dart'; // Import your DatabaseHelper
+import 'package:saysongs/langutils/tamiltransliterator.dart';
 
 class TamilTextPage extends StatefulWidget {
   final int songId;
@@ -14,7 +14,6 @@ class TamilTextPage extends StatefulWidget {
 }
 
 class _TamilTextPageState extends State<TamilTextPage> {
-  // Default segment is Tamil
   String _selectedLanguage = 'Tamil';
 
   @override
@@ -34,7 +33,7 @@ class _TamilTextPageState extends State<TamilTextPage> {
               onValueChanged: (value) {
                 setState(() {
                   _selectedLanguage = value ?? 'Tamil';
-                  print(_selectedLanguage); // Default to Tamil if value is null
+
                 });
               },
               groupValue: _selectedLanguage,
@@ -59,8 +58,8 @@ class _TamilTextPageState extends State<TamilTextPage> {
                       child: HtmlWidget(
                         text ?? '',
                         textStyle: CupertinoTheme.of(context).textTheme.textStyle.copyWith(
-                          fontSize: 19,
-                          // Apply custom font if needed
+                          fontSize: _selectedLanguage=='Tamil'?24:21,
+                          fontFamily: _selectedLanguage == 'Tamil' ? 'MuktaMalar' : 'PTSerif-Regular',
                         ),
                       ),
                     ),
@@ -80,7 +79,6 @@ class _TamilTextPageState extends State<TamilTextPage> {
     if (_selectedLanguage == 'Tamil') {
       return await DatabaseHelper().getTamilTextBySongId(widget.songId, 'Tamil');
     } else {
-      // Fetch the Tamil text, then transliterate it to English
       final tamilText = await DatabaseHelper().getTamilTextBySongId(widget.songId, 'Tamil');
       return t.transliterate(tamilText!);
     }
